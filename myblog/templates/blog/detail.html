@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{{post.title}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{post.content}}">
+<meta name="keywords" content="{{post.etiket}}">
+{% endblock meta %}
+{% block content %}
+<div class="post container">
+    <h1>{{ post.title }}</h1>
+    <h5 class="text-muted">{{ post.description }}</h5>
+   {{ post.content|safe }}
+</div>
+{% endblock content %}

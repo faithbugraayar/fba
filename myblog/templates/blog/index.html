@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Anasayfa{% endblock title %}
+{% block style %}{% static 'css/index.css' %}{% endblock style %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="firspageleft">
+          <h1>Selam Ben Fatih... </h1>
+          <h5>Junior Developer & Designer</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eveniet possimus incidunt magnam, exercitationem perferendis nulla veritatis temporibus recusandae molestiae omnis. Non deleniti, facere natus minima doloremque facilis fuga neque.</p>
+          <div class="btn btn-warning"><a class="link-light text-decoration-none" href="{% url 'hakkimdalist' %}">Hakkımda</a></div>
+        </div>
+      </div>
+      <div class="col-md-6 ">
+          <img src="{% static 'img/me.png' %}" height="450px">
+      </div>
+    </div>
+  </div> <div class="br">
+    <br><br><br><br><br>
+  </div>
+  <div class="container">
+    <div class="row">
+        
+    {% for blogs in blog  %}
+      <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{blogs.title}}</h5>
+              <p class="card-text">{{blogs.description}}</p>
+              <a a href="{% url 'hakimda_detail' pk=blogs.pk %}" class="card-link">Ayrıntılar</a>
+            </div>
+          </div>
+      </div>
+   
+    
+    {% endfor %}  
+</div>
+
+</div>
+{% endblock content %}

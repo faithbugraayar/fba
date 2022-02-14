@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Hakkımda{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row">
+    {% for blogs in blog  %}
+      <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{blogs.title}}</h5>
+              <p class="card-text">{{blogs.description}}</p>
+              <a a href="{% url 'hakimda_detail' pk=blogs.pk %}" class="card-link">Ayrıntılar</a>
+            </div>
+          </div>
+      </div>
+   
+    
+    {% endfor %}  
+</div>
+
+</div>
+{% endblock content %}
